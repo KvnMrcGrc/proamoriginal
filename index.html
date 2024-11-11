@@ -8,68 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-
-            /* Nuevos estilos para mejorar la visualización en móviles */
-            body {
-                overflow-x: hidden; /* Previene el desplazamiento horizontal */
-            }
-
-            .container {
-                width: 100%;
-                padding: 0 15px;
-                box-sizing: border-box;
-            }
-
-            .hero {
-                padding: 6rem 0 4rem;
-            }
-
-            .services, .gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .package-tabs {
-                flex-direction: column;
-            }
-
-            .package-tab {
-                width: 100%;
-            }
-
-            .contact {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Ajuste para el efecto de nieve */
-        .snowflake {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            animation: snowflake-fall 10s linear infinite, snowflake-shake 3s ease-in-out infinite;
-        }
-
-        @keyframes snowflake-fall {
-            0% { top: -10%; }
-            100% { top: 100%; }
-        }
-
-        @keyframes snowflake-shake {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(80px); }
-        }
 .wrapper {
   display: inline-flex;
   list-style: none;
@@ -79,43 +17,7 @@
   font-family: "Poppins", sans-serif;
   justify-content: center;
 }
-        .snowflake {
-            color: #fff;
-            font-size: 1em;
-            font-family: Arial, sans-serif;
-            text-shadow: 0 0 5px #000;
-            position: fixed;
-            top: -10%;
-            z-index: 9999;
-            user-select: none;
-            cursor: default;
-            animation-name: snowflake-fall, snowflake-shake;
-            animation-duration: 10s, 3s;
-            animation-timing-function: linear, ease-in-out;
-            animation-iteration-count: infinite, infinite;
-            animation-play-state: running, running;
-        }
 
-        @keyframes snowflake-fall {
-            0% {
-                top: -10%;
-            }
-            100% {
-                top: 100%;
-            }
-        }
-
-        @keyframes snowflake-shake {
-            0% {
-                transform: translateX(0px);
-            }
-            50% {
-                transform: translateX(80px);
-            }
-            100% {
-                transform: translateX(0px);
-            }
-        }
 .wrapper .icon {
   position: relative;
   background: #fff;
@@ -742,29 +644,6 @@
             alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
             contactForm.reset();
         });
-                function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.innerHTML = '❄';
-            snowflake.style.left = Math.random() * window.innerWidth + 'px';
-            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-            snowflake.style.opacity = Math.random();
-            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-            
-            document.body.appendChild(snowflake);
-            
-            setTimeout(() => {
-                snowflake.remove();
-            }, 10000);
-        }
-
-        setInterval(createSnowflake, 500);
-                if (window.innerWidth > 768) {
-            setInterval(createSnowflake, 500);
-        } else {
-            // Crear menos copos de nieve en dispositivos móviles
-            setInterval(createSnowflake, 2000);
-        }
     </script>
 </body>
 </html>
