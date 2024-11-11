@@ -17,7 +17,43 @@
   font-family: "Poppins", sans-serif;
   justify-content: center;
 }
+        .snowflake {
+            color: #fff;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 5px #000;
+            position: fixed;
+            top: -10%;
+            z-index: 9999;
+            user-select: none;
+            cursor: default;
+            animation-name: snowflake-fall, snowflake-shake;
+            animation-duration: 10s, 3s;
+            animation-timing-function: linear, ease-in-out;
+            animation-iteration-count: infinite, infinite;
+            animation-play-state: running, running;
+        }
 
+        @keyframes snowflake-fall {
+            0% {
+                top: -10%;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+
+        @keyframes snowflake-shake {
+            0% {
+                transform: translateX(0px);
+            }
+            50% {
+                transform: translateX(80px);
+            }
+            100% {
+                transform: translateX(0px);
+            }
+        }
 .wrapper .icon {
   position: relative;
   background: #fff;
