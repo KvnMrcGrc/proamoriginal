@@ -8,6 +8,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+
+            /* Nuevos estilos para mejorar la visualización en móviles */
+            body {
+                overflow-x: hidden; /* Previene el desplazamiento horizontal */
+            }
+
+            .container {
+                width: 100%;
+                padding: 0 15px;
+                box-sizing: border-box;
+            }
+
+            .hero {
+                padding: 6rem 0 4rem;
+            }
+
+            .services, .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .package-tabs {
+                flex-direction: column;
+            }
+
+            .package-tab {
+                width: 100%;
+            }
+
+            .contact {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Ajuste para el efecto de nieve */
+        .snowflake {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            animation: snowflake-fall 10s linear infinite, snowflake-shake 3s ease-in-out infinite;
+        }
+
+        @keyframes snowflake-fall {
+            0% { top: -10%; }
+            100% { top: 100%; }
+        }
+
+        @keyframes snowflake-shake {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(80px); }
+        }
 .wrapper {
   display: inline-flex;
   list-style: none;
