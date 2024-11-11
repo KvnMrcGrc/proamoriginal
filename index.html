@@ -759,6 +759,12 @@
         }
 
         setInterval(createSnowflake, 500);
+                if (window.innerWidth > 768) {
+            setInterval(createSnowflake, 500);
+        } else {
+            // Crear menos copos de nieve en dispositivos móviles
+            setInterval(createSnowflake, 2000);
+        }
     </script>
 </body>
 </html>
