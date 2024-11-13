@@ -380,6 +380,11 @@
         }
         
         @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 0 15px;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -390,6 +395,23 @@
             
             .hero p {
                 font-size: 1rem;
+            }
+
+            .services, .gallery, .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .package-tabs {
+                flex-direction: column;
+            }
+
+            .package-tab {
+                width: 100%;
+            }
+
+            .wrapper {
+                height: auto;
+                padding-top: 20px;
             }
         }
 
@@ -430,6 +452,10 @@
             .nav-links a {
                 display: block;
                 padding: 0.5rem 1rem;
+            }
+
+            .hero {
+                padding-top: 6rem;
             }
         }
     </style>
@@ -701,6 +727,16 @@
                 navLinks.classList.remove('active');
             });
         });
+
+        // Ajustar el padding-top del hero cuando cambia el tamaño de la ventana
+        function adjustHeroPadding() {
+            const header = document.querySelector('header');
+            const hero = document.querySelector('.hero');
+            hero.style.paddingTop = (header.offsetHeight + 20) + 'px';
+        }
+
+        window.addEventListener('load', adjustHeroPadding);
+        window.addEventListener('resize', adjustHeroPadding);
     </script>
 </body>
 </html>
