@@ -8,6 +8,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
+        .package-content {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.trend-label {
+     background-color: #ff4500;
+     color: white;
+     font-size: 0.8em;
+     padding: 2px 6px;
+     border-radius: 10px;
+     margin-left: 5px;
+     display: inline-block;
+     vertical-align: middle;
+   }
+.featured-item {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.featured-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.trend-label {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.highlight {
+    color: var(--primary);
+    font-weight: bold;
+}
         .wrapper {
           display: inline-flex;
           list-style: none;
@@ -560,7 +613,12 @@
                 </div>
             </div>
         </section>
-
+        <div class="featured-item" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50">
+            <h3>¡Nuevo! Máquina de Niebla</h3>
+            <p>Ahora disponible en nuestro Paquete Premium</p>
+            <img src="maquina-niebla.jpg" alt="Máquina de Niebla" class="featured-image">
+            <span class="trend-label">Tendencia</span>
+        </div>
         <section id="contacto">
             <div class="container">
                 <h2 class="section-title" data-aos="fade-up" data-aos-offset="100">Contáctanos</h2>
