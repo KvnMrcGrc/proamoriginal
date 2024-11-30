@@ -8,6 +8,101 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
+                :root {
+            --primary: #6a0dad;
+            --secondary: #4a0e78;
+            --text: #333;
+            --background: #f8f8f8;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .featured-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-item h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .featured-item p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .featured-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .trend-label {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        @media (min-width: 768px) {
+            .featured-item {
+                display: flex;
+                align-items: center;
+                text-align: left;
+                padding: 3rem;
+            }
+
+            .featured-content {
+                flex: 1;
+                padding-right: 2rem;
+            }
+
+            .featured-image {
+                max-width: 300px;
+                margin-top: 0;
+            }
+
+            .featured-item h3 {
+                font-size: 2rem;
+            }
+
+            .featured-item p {
+                font-size: 1.1rem;
+            }
+        }
+
         .package-content {
   border: 1px solid #ccc;
   padding: 20px;
@@ -614,8 +709,10 @@
             </div>
         </section>
         <div class="featured-item" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50">
-            <h3>¡Nuevo! Máquina de Niebla</h3>
-            <p>Ahora disponible en nuestro Paquete Premium</p>
+            <div class="featured-content">
+                <h3>¡Nuevo! Máquina de Niebla</h3>
+                <p>Ahora disponible en nuestro Paquete Premium</p>
+            </div>
             <img src="maquina.png" alt="Máquina de Niebla" class="featured-image">
             <span class="trend-label">Tendencia</span>
         </div>
@@ -632,10 +729,6 @@
                         <div class="contact-item">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                             <span>351 122 6727</span>
-                        </div>
-                        <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                            <span>Calle Dr Guitierrez Mejia, Zamora, Michoacan, 26000</span>
                         </div>
                         <ul class="wrapper">
                           <li class="icon facebook">
