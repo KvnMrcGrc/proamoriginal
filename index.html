@@ -6,241 +6,7 @@
     <title>PROAM Zamora - Sonido Profesional para Eventos Inolvidables</title>
     <link rel="icon" href="icono.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
-                :root {
-            --primary: #6a0dad;
-            --secondary: #4a0e78;
-            --text: #333;
-            --background: #f8f8f8;
-            --white: #ffffff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--background);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .featured-item {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 2rem;
-            margin-top: 3rem;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .featured-item h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .featured-item p {
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-
-        .featured-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 1rem;
-        }
-
-        .trend-label {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        @media (min-width: 768px) {
-            .featured-item {
-                display: flex;
-                align-items: center;
-                text-align: left;
-                padding: 3rem;
-            }
-
-            .featured-content {
-                flex: 1;
-                padding-right: 2rem;
-            }
-
-            .featured-image {
-                max-width: 300px;
-                margin-top: 0;
-            }
-
-            .featured-item h3 {
-                font-size: 2rem;
-            }
-
-            .featured-item p {
-                font-size: 1.1rem;
-            }
-        }
-
-        .package-content {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-.trend-label {
-     background-color: #ff4500;
-     color: white;
-     font-size: 0.8em;
-     padding: 2px 6px;
-     border-radius: 10px;
-     margin-left: 5px;
-     display: inline-block;
-     vertical-align: middle;
-   }
-.featured-item {
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    padding: 2rem;
-    margin-top: 3rem;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.featured-item h3 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.featured-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 1rem;
-}
-
-.trend-label {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: var(--primary);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-.highlight {
-    color: var(--primary);
-    font-weight: bold;
-}
-        .wrapper {
-          display: inline-flex;
-          list-style: none;
-          height: 120px;
-          width: 100%;
-          padding-top: 40px;
-          font-family: "Poppins", sans-serif;
-          justify-content: center;
-        }
-
-        .wrapper .icon {
-          position: relative;
-          background: #fff;
-          border-radius: 50%;
-          margin: 10px;
-          width: 50px;
-          height: 50px;
-          font-size: 18px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-          cursor: pointer;
-          transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        .wrapper .tooltip {
-          position: absolute;
-          top: 0;
-          font-size: 14px;
-          background: #fff;
-          color: #fff;
-          padding: 5px 8px;
-          border-radius: 5px;
-          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-          opacity: 0;
-          pointer-events: none;
-          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        .wrapper .tooltip::before {
-          position: absolute;
-          content: "";
-          height: 8px;
-          width: 8px;
-          background: #fff;
-          bottom: -3px;
-          left: 50%;
-          transform: translate(-50%) rotate(45deg);
-          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        .wrapper .icon:hover .tooltip {
-          top: -45px;
-          opacity: 1;
-          visibility: visible;
-          pointer-events: auto;
-        }
-
-        .wrapper .icon:hover span,
-        .wrapper .icon:hover .tooltip {
-          text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-        }
-
-        .wrapper .facebook:hover,
-        .wrapper .facebook:hover .tooltip,
-        .wrapper .facebook:hover .tooltip::before {
-          background: #1877f2;
-          color: #fff;
-        }
-
-        .wrapper .twitter:hover,
-        .wrapper .twitter:hover .tooltip,
-        .wrapper .twitter:hover .tooltip::before {
-          background: #1da1f2;
-          color: #fff;
-        }
-
-        .wrapper .instagram:hover,
-        .wrapper .instagram:hover .tooltip,
-        .wrapper .instagram:hover .tooltip::before {
-          background: #e4405f;
-          color: #fff;
-        }
         :root {
             --primary: #6a0dad;
             --primary-light: #8a2be2;
@@ -405,7 +171,7 @@
         
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
         }
         
@@ -413,6 +179,7 @@
             position: relative;
             overflow: hidden;
             border-radius: 10px;
+            aspect-ratio: 1 / 1;
         }
         
         .gallery-item img {
@@ -471,20 +238,61 @@
             margin-right: 0.5rem;
         }
         
+        .featured-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-item h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .featured-item p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .featured-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .trend-label {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
         .contact {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         
-        .contact-info, .contact-form {
+        .contact-info {
             background-color: var(--white);
             border-radius: 10px;
             padding: 2rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .contact-info h3, .contact-form h3 {
+        .contact-info h3 {
             color: var(--primary);
             margin-bottom: 1rem;
         }
@@ -502,22 +310,21 @@
             fill: var(--primary);
         }
         
-        .form-group {
-            margin-bottom: 1rem;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
         }
         
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
+        .social-links a {
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
         }
         
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        .social-links a:hover {
+            color: var(--secondary);
         }
         
         footer {
@@ -539,20 +346,31 @@
             .hero p {
                 font-size: 1rem;
             }
+
+            .featured-item {
+                padding: 1.5rem;
+            }
+
+            .featured-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .featured-item p {
+                font-size: 0.9rem;
+            }
         }
 
-        /* Estilos adicionales para la navegación responsive */
         .menu-toggle {
             display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
-                background: none;
-                border: none;
-                font-size: 1.5rem;
-                cursor: pointer;
             }
 
             .nav-links {
@@ -580,6 +398,33 @@
                 padding: 0.5rem 1rem;
             }
         }
+
+        @media (min-width: 769px) {
+            .featured-item {
+                display: flex;
+                align-items: center;
+                text-align: left;
+                padding: 3rem;
+            }
+
+            .featured-content {
+                flex: 1;
+                padding-right: 2rem;
+            }
+
+            .featured-image {
+                max-width: 300px;
+                margin-top: 0;
+            }
+
+            .featured-item h3 {
+                font-size: 2rem;
+            }
+
+            .featured-item p {
+                font-size: 1.1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -605,9 +450,9 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1 data-aos="fade-up" data-aos-offset="100" data-aos-once="true">Sonido Profesional para Eventos Inolvidables</h1>
-                <p data-aos="fade-up" data-aos-delay="200" data-aos-offset="100" data-aos-once="true">Ofrecemos equipos de sonido de alta calidad para todo tipo de eventos. Experiencia, profesionalismo y tecnología de punta a su servicio.</p>
-                <div data-aos="fade-up" data-aos-delay="400" data-aos-offset="100" data-aos-once="true">
+                <h1>Sonido Profesional para Eventos Inolvidables</h1>
+                <p>Ofrecemos equipos de sonido de alta calidad para todo tipo de eventos. Experiencia, profesionalismo y tecnología de punta a su servicio.</p>
+                <div>
                     <a href="#contacto" class="btn btn-primary">Solicitar Cotización</a>
                     <a href="#paquetes" class="btn btn-secondary">Ver Paquetes</a>
                 </div>
@@ -616,17 +461,17 @@
 
         <section id="servicios">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up" data-aos-offset="100">Nuestros Servicios</h2>
+                <h2 class="section-title">Nuestros Servicios</h2>
                 <div class="services">
-                    <div class="service-card" data-aos="fade-up" data-aos-offset="100">
+                    <div class="service-card">
                         <h3>Sonido para Bodas</h3>
                         <p>Sistemas de sonido profesionales para que cada momento de su boda sea perfecto.</p>
                     </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="200" data-aos-offset="100">
+                    <div class="service-card">
                         <h3>Eventos Corporativos</h3>
                         <p>Equipos de última generación para conferencias, presentaciones y eventos empresariales.</p>
                     </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="400" data-aos-offset="100">
+                    <div class="service-card">
                         <h3>Fiestas y Celebraciones</h3>
                         <p>Sistemas de audio potentes y claros para fiestas inolvidables.</p>
                     </div>
@@ -636,25 +481,25 @@
 
         <section id="galeria">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up" data-aos-offset="100">Galería de Eventos</h2>
+                <h2 class="section-title">Galería de Eventos</h2>
                 <div class="gallery">
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-offset="100">
-                        <img src="imagen.jpg" alt="Evento 1" height="300" width="400">
+                    <div class="gallery-item">
+                        <img src="imagen.jpg" alt="Evento 1">
                     </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200" data-aos-offset="100">
-                        <img src="imagen2.jpg" alt="Evento 2" height="300" width="400">
+                    <div class="gallery-item">
+                        <img src="imagen2.jpg" alt="Evento 2">
                     </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400" data-aos-offset="100">
-                        <img src="imagen3.jpg" alt="Evento 3" height="300" width="400">
+                    <div class="gallery-item">
+                        <img src="imagen3.jpg" alt="Evento 3">
                     </div>
-                                        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400" data-aos-offset="100">
-                        <img src="imagen4.jpg" alt="Evento 3" height="300" width="600">
+                    <div class="gallery-item">
+                        <img src="imagen4.jpg" alt="Evento 4">
                     </div>
-                                        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400" data-aos-offset="100">
-                        <img src="imagen5.jpg" alt="Evento 3" height="300" width="700">
+                    <div class="gallery-item">
+                        <img src="imagen5.jpg" alt="Evento 5">
                     </div>
-                                        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400" data-aos-offset="100">
-                        <img src="imagen6.jpg" alt="Evento 3" height="300" width="800">
+                    <div class="gallery-item">
+                <img src="imagen6.jpg" alt="Evento 6">
                     </div>
                 </div>
             </div>
@@ -662,8 +507,8 @@
 
         <section id="paquetes">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up" data-aos-offset="100">Nuestros Paquetes</h2>
-                <div class="packages" data-aos="fade-up" data-aos-offset="100">
+                <h2 class="section-title">Nuestros Paquetes</h2>
+                <div class="packages">
                     <div class="package-tabs">
                         <div class="package-tab active" data-package="basico">Básico</div>
                         <div class="package-tab" data-package="estandar">Estándar</div>
@@ -708,7 +553,8 @@
                 </div>
             </div>
         </section>
-        <div class="featured-item" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50">
+
+        <div class="featured-item">
             <div class="featured-content">
                 <h3>¡Nuevo! Máquina de Niebla</h3>
                 <p>Ahora disponible en nuestro Paquete Premium</p>
@@ -716,11 +562,12 @@
             <img src="maquina.jpeg" alt="Máquina de Niebla" class="featured-image">
             <span class="trend-label">Tendencia</span>
         </div>
+
         <section id="contacto">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up" data-aos-offset="100">Contáctanos</h2>
+                <h2 class="section-title">Contáctanos</h2>
                 <div class="contact">
-                    <div class="contact-info" data-aos="fade-right" data-aos-offset="100">
+                    <div class="contact-info">
                         <h3>Información de Contacto</h3>
                         <div class="contact-item">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -730,49 +577,17 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                             <span>351 122 6727</span>
                         </div>
-                        <ul class="wrapper">
-                          <li class="icon facebook">
-                            <span class="tooltip">Facebook</span>
-                            <svg
-                              viewBox="0 0 320 512"
-                              height="1.2em"
-                              fill="currentColor"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
-                              ></path>
-                            </svg>
-                          </li>
-                          <li class="icon twitter">
-                            <span class="tooltip">Twitter</span>
-                            <svg
-                              height="1.8em"
-                              fill="currentColor"
-                              viewBox="0 0 48 48"
-                              xmlns="http://www.w3.org/2000/svg"
-                              class="twitter"
-                            >
-                              <path
-                                d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"
-                              ></path>
-                            </svg>
-                          </li>
-                          <li class="icon instagram">
-                            <span class="tooltip">Instagram</span>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              height="1.2em"
-                              fill="currentColor"
-                              class="bi bi-instagram"
-                              viewBox="0 0 16 16"
-                            >
-                              <path
-                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
-                              ></path>
-                            </svg>
-                          </li>
-                        </ul>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook">
+                                <svg viewBox="0 0 320 512" height="1.2em" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
+                            </a>
+                            <a href="#" aria-label="Twitter">
+                                <svg height="1.8em" fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path></svg>
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -785,15 +600,7 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Inicializar AOS
-        AOS.init({
-            duration: 1000,
-            once: false,
-            mirror: true
-        });
-
         // Funcionalidad de pestañas para paquetes
         const packageTabs = document.querySelectorAll('.package-tab');
         const packageContents = document.querySelectorAll('.package-content');
@@ -808,25 +615,6 @@
                 tab.classList.add('active');
                 document.getElementById(package).style.display = 'block';
             });
-        });
-
-        // Smooth scroll para enlaces de navegación
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Manejo del formulario de contacto
-        const contactForm = document.getElementById('contact-form');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Aquí iría la lógica para enviar el formulario
-            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
-            contactForm.reset();
         });
 
         // Funcionalidad para el menú responsive
