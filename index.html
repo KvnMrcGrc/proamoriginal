@@ -10,22 +10,12 @@
     <style>
         :root {
             --primary: #6a0dad;
-            --primary-light: #8a2be2;
             --secondary: #4a0e78;
             --text: #333;
-            --text-light: #666;
             --background: #f8f8f8;
             --white: #ffffff;
         }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -52,12 +42,11 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease;
         }
         
         header.scrolled {
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            background-color: var(--primary);
         }
         
         nav {
@@ -74,11 +63,11 @@
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
         }
         
-        .logo:hover {
-            transform: scale(1.05);
+        header.scrolled .logo {
+            color: var(--white);
         }
         
         .logo img {
@@ -100,43 +89,50 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
-            position: relative;
         }
         
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
+        header.scrolled .nav-links a {
+            color: var(--white);
         }
         
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        header.scrolled .nav-links a:hover {
+            color: var(--background);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+        
+        header.scrolled .menu-toggle {
+            color: var(--white);
         }
         
         .hero {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
-            padding: 10rem 0 8rem;
+            padding: 8rem 0 6rem;
             text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         .hero p {
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto 2rem;
-            opacity: 0.9;
         }
         
         .btn {
@@ -146,7 +142,6 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
         }
         
         .btn-primary {
@@ -155,9 +150,8 @@
         }
         
         .btn-primary:hover {
-            background-color: transparent;
-            color: var(--white);
-            border-color: var(--white);
+            background-color: var(--background);
+            color: var(--primary);
         }
         
         .btn-secondary {
@@ -171,31 +165,18 @@
             color: var(--primary);
         }
         
-        section {
-            padding: 5rem 0;
-        }
-        
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: var(--primary);
-            margin: 0.5rem auto 0;
         }
         
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
         
         .service-card {
@@ -204,12 +185,11 @@
             padding: 2rem;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
         
         .service-card h3 {
@@ -221,6 +201,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
+            margin-top: 3rem;
         }
         
         .gallery-item {
@@ -228,7 +209,6 @@
             overflow: hidden;
             border-radius: 10px;
             aspect-ratio: 1 / 1;
-            cursor: pointer;
         }
         
         .gallery-item img {
@@ -242,27 +222,12 @@
             transform: scale(1.1);
         }
         
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .gallery-item:hover::after {
-            opacity: 1;
-        }
-        
         .packages {
             background-color: var(--white);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 3rem;
         }
         
         .package-tabs {
@@ -290,12 +255,6 @@
         
         .package-content.active {
             display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
         
         .package-content h3 {
@@ -308,17 +267,10 @@
             margin-bottom: 1rem;
         }
         
-        .package-content li {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
         .package-content li::before {
             content: "✓";
             color: var(--primary);
             margin-right: 0.5rem;
-            font-weight: bold;
         }
         
         .featured-item {
@@ -330,37 +282,26 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .featured-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-
+        
         .featured-item h3 {
             color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
-
+        
         .featured-item p {
             margin-bottom: 1.5rem;
             font-size: 1rem;
         }
-
+        
         .featured-image {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
             margin-top: 1rem;
-            transition: transform 0.3s ease;
         }
-
-        .featured-item:hover .featured-image {
-            transform: scale(1.05);
-        }
-
+        
         .trend-label {
             position: absolute;
             top: 1rem;
@@ -371,14 +312,13 @@
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: bold;
-            transform: rotate(5deg);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
         .contact {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
         
         .contact-info {
@@ -415,13 +355,11 @@
         
         .social-links a {
             color: var(--primary);
-            font-size: 1.5rem;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease;
         }
         
         .social-links a:hover {
             color: var(--secondary);
-            transform: scale(1.1);
         }
         
         footer {
@@ -429,71 +367,52 @@
             color: var(--white);
             text-align: center;
             padding: 2rem 0;
-            position: relative;
+            margin-top: 3rem;
         }
         
-        footer::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background: linear-gradient(to top right, var(--primary) 49%, transparent 51%);
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
         
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero {
-                padding: 8rem 0 6rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (min-width: 768px) {
             .featured-item {
-                padding: 1.5rem;
+                display: flex;
+                align-items: center;
+                text-align: left;
+                padding: 3rem;
             }
-
+        
+            .featured-content {
+                flex: 1;
+                padding-right: 2rem;
+            }
+        
+            .featured-image {
+                max-width: 300px;
+                margin-top: 0;
+            }
+        
             .featured-item h3 {
-                font-size: 1.2rem;
-            }
-
-            .featured-item p {
-                font-size: 0.9rem;
-            }
-            
-            .section-title {
                 font-size: 2rem;
             }
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
+        
+            .featured-item p {
+                font-size: 1.1rem;
+            }
         }
         
-        .menu-toggle:hover {
-            color: var(--primary);
-        }
-
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
             }
-
+        
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -504,46 +423,37 @@
                 background-color: var(--white);
                 box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             }
-
+        
             .nav-links.active {
                 display: flex;
             }
-
+        
             .nav-links li {
                 margin: 0;
                 text-align: center;
             }
-
+        
             .nav-links a {
                 display: block;
                 padding: 0.5rem 1rem;
             }
-        }
-
-        @media (min-width: 769px) {
-            .featured-item {
-                display: flex;
-                align-items: center;
-                text-align: left;
-                padding: 3rem;
-            }
-
-            .featured-content {
-                flex: 1;
-                padding-right: 2rem;
-            }
-
-            .featured-image {
-                max-width: 300px;
-                margin-top: 0;
-            }
-
-            .featured-item h3 {
+        
+            .hero h1 {
                 font-size: 2rem;
             }
-
-            .featured-item p {
-                font-size: 1.1rem;
+        
+            .hero p {
+                font-size: 1rem;
+            }
+        
+            .btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
             }
         }
     </style>
@@ -571,9 +481,9 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1 data-aos="fade-up">Sonido Profesional para Eventos Inolvidables</h1>
-                <p data-aos="fade-up" data-aos-delay="200">Ofrecemos equipos de sonido de alta calidad para todo tipo de eventos. Experiencia, profesionalismo y tecnología de punta a su servicio.</p>
-                <div data-aos="fade-up" data-aos-delay="400">
+                <h1 class="fade-in">Sonido Profesional para Eventos Inolvidables</h1>
+                <p class="fade-in">Ofrecemos equipos de sonido de alta calidad para todo tipo de eventos. Experiencia, profesionalismo y tecnología de punta a su servicio.</p>
+                <div class="fade-in">
                     <a href="#contacto" class="btn btn-primary">Solicitar Cotización</a>
                     <a href="#paquetes" class="btn btn-secondary">Ver Paquetes</a>
                 </div>
@@ -582,17 +492,17 @@
 
         <section id="servicios">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Nuestros Servicios</h2>
+                <h2 class="section-title fade-in">Nuestros Servicios</h2>
                 <div class="services">
-                    <div class="service-card" data-aos="fade-up">
+                    <div class="service-card fade-in">
                         <h3>Sonido para Bodas</h3>
                         <p>Sistemas de sonido profesionales para que cada momento de su boda sea perfecto.</p>
                     </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card fade-in">
                         <h3>Eventos Corporativos</h3>
                         <p>Equipos de última generación para conferencias, presentaciones y eventos empresariales.</p>
                     </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card fade-in">
                         <h3>Fiestas y Celebraciones</h3>
                         <p>Sistemas de audio potentes y claros para fiestas inolvidables.</p>
                     </div>
@@ -602,24 +512,24 @@
 
         <section id="galeria">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Galería de Eventos</h2>
+                <h2 class="section-title fade-in">Galería de Eventos</h2>
                 <div class="gallery">
-                    <div class="gallery-item" data-aos="zoom-in">
+                    <div class="gallery-item fade-in">
                         <img src="imagen.jpg" alt="Evento 1" loading="lazy">
                     </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-item fade-in">
                         <img src="imagen2.jpg" alt="Evento 2" loading="lazy">
                     </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-item fade-in">
                         <img src="imagen3.jpg" alt="Evento 3" loading="lazy">
                     </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-item fade-in">
                         <img src="imagen4.jpg" alt="Evento 4" loading="lazy">
                     </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="gallery-item fade-in">
                         <img src="imagen5.jpg" alt="Evento 5" loading="lazy">
                     </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="gallery-item fade-in">
                         <img src="imagen6.jpg" alt="Evento 6" loading="lazy">
                     </div>
                 </div>
@@ -628,8 +538,8 @@
 
         <section id="paquetes">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Nuestros Paquetes</h2>
-                <div class="packages" data-aos="fade-up">
+                <h2 class="section-title fade-in">Nuestros Paquetes</h2>
+                <div class="packages fade-in">
                     <div class="package-tabs">
                         <div class="package-tab active" data-package="basico">Básico</div>
                         <div class="package-tab" data-package="estandar">Estándar</div>
@@ -668,6 +578,7 @@
                             <li>Mezcladora digital de 32 canales</li>
                             <li>Sistema de iluminación completo con luces móviles</li>
                             <li>Técnico de sonido dedicado</li>
+                            <li>Máquina de Niebla</li>
                         </ul>
                         <a href="#contacto" class="btn btn-primary">Reservar - $20,000</a>
                     </div>
@@ -675,7 +586,7 @@
             </div>
         </section>
 
-        <div class="featured-item" data-aos="fade-up">
+        <div class="featured-item fade-in">
             <div class="featured-content">
                 <h3>¡Nuevo! Máquina de Niebla</h3>
                 <p>Ahora disponible en nuestro Paquete Premium</p>
@@ -686,9 +597,9 @@
 
         <section id="contacto">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Contáctanos</h2>
+                <h2 class="section-title fade-in">Contáctanos</h2>
                 <div class="contact">
-                    <div class="contact-info" data-aos="fade-up">
+                    <div class="contact-info fade-in">
                         <h3>Información de Contacto</h3>
                         <div class="contact-item">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -726,7 +637,8 @@
         // Inicializar AOS
         AOS.init({
             duration: 1000,
-            once: true,
+            once: false,
+            mirror: true
         });
 
         // Funcionalidad de pestañas para paquetes
@@ -769,6 +681,27 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        // Animación de fade-in al hacer scroll
+        const fadeElems = document.querySelectorAll('.fade-in');
+
+        const fadeIn = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                } else {
+                    entry.target.classList.remove('is-visible');
+                }
+            });
+        };
+
+        const fadeObserver = new IntersectionObserver(fadeIn, {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElems.forEach(elem => fadeObserver.observe(elem));
     </script>
 </body>
 </html>
