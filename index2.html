@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Revive los eventos inolvidables organizados por PROAM Zamora. Calidad, profesionalismo y diversión garantizada.">
-    <title>Nuestros Eventos - PROAZamora</title>
+    <title>Nuestros Eventos - PROAM Zamora</title>
     <link rel="icon" href="icono.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
@@ -190,21 +190,29 @@
                 grid-template-columns: 1fr;
             }
         }
+        .event-details {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
     </style>
 </head>
 <body>
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">
-                <img src="icono.png" alt="PROAz Logo">
-                PROAZamora
+            <a href="#" class="logo">
+                <img src="icono.png" alt="PROAM Logo">
+                PROAM Zamora
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#servicios">Servicios</a></li>
-                <li><a href="index.html#galeria">Galería</a></li>
-                <li><a href="index.html#paquetes">Paquetes</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#paquetes">Paquetes</a></li>
+                <li><a href="#contacto">Contacto</a></li>
                 <li><a href="index2.html">Nuestros Eventos</a></li>
+                <!-- From Uiverse.io by r7chardgh --> 
             </ul>
         </nav>
     </header>
@@ -219,13 +227,31 @@
 
         <section class="container events-grid">
             <div class="event-card" data-aos="fade-up">
-                <iframe src="https://www.youtube.com/embed/mfl1jVWdSps?si=jOMZ35I5J5SHOtym" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/mfl1jVWdSps?si=jOMZ35I5J5SHOtym" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                
                 <div class="event-info">
                     <h3>Evento de Halloween - Zamora Mich.</h3>
                     <p>Una celebración mágica con el sonido perfecto de PROAM.</p>
-                    <a href="#" class="btn">Ver Detalles</a>
+                    <a class="btn ver-detalles">Ver Detalles</a>
+            
+                    <!-- Mueve la info aquí, debajo del botón -->
+                    <div class="event-details" style="display: none;">
+                        <p>
+                            <strong>📍 Ubicación:</strong> <a href="https://g.co/kgs/HiY1WFJ" target="_blank" style="color: var(--primary); text-decoration: underline;">La Mansión</a><br><br>
+                            <strong>🎓 Evento privado para alumnos</strong><br><br>
+                            <ul style="padding-left: 1.2rem; color: var(--text-light); font-size: 0.9rem; list-style-type: '• '; line-height: 1.6;">
+                                <li>Asistencia exclusiva con estudiantes de varias instituciones.</li>
+                                <li>Iluminación profesional sincronizada con la música.</li>
+                                <li>Montaje elegante y sonido balanceado para interiores.</li>
+                                <li>Ambiente seguro y divertido toda la noche.</li>
+                                <li>Organización completa a cargo de PROAM Zamora.</li>
+                            </ul>
+                        </p>
+                        
+                                            </div>
                 </div>
             </div>
+            
         </section>
     </main>
 
@@ -243,5 +269,20 @@
             mirror: false /* No se activan al hacer scroll inverso */
         });
     </script>
+    <script>
+document.querySelectorAll('.ver-detalles').forEach(boton => {
+    boton.addEventListener('click', function () {
+        const detalles = this.nextElementSibling; // sigue funcionando si .event-details está justo después del botón
+        if (detalles.style.display === "none" || detalles.style.display === "") {
+            detalles.style.display = "block";
+            this.textContent = "Ocultar Detalles";
+        } else {
+            detalles.style.display = "none";
+            this.textContent = "Ver Detalles";
+        }
+    });
+});
+
+    </script>    
 </body>
 </html>
